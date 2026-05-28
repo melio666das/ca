@@ -165,90 +165,90 @@ const playlist = [
     {
     title: "musica 1",
     artist: "no sirve",
-    src: "musica/musica.mp3",
+    src: "musica.mp3",
     cover: "https://picsum.photos/seed/1/200/200"
   },
     {
     title: "coqueta",
     artist: "Fuerza Regida y Grupo Frontera",
-    src: "musica/coqueta.mp3",
+    src: "coqueta.mp3",
     cover: "https://picsum.photos/seed/1/200/200"
   },
   {
     title: "Chicago",
     artist: "Michael",
-    src: "musica/chicago.mp3",
+    src: "chicago.mp3",
     cover: "https://picsum.photos/seed/2/200/200"
   },
   {
     title: "Morena",
     artist: "Los Felinos",
-    src: "musica/morena.mp3",
+    src: "morena.mp3",
     cover: "https://picsum.photos/seed/3/200/200"
   },
   {
     title: "Happy",
     artist: "Turles",
-    src: "musica/happy.mp3",
+    src: "happy.mp3",
     cover: "https://picsum.photos/seed/4/200/200"
   },
   {
     title: "Tu Falta De Querer",
     artist: "Mon Laferte",
-    src: "musica/falta.mp3",
+    src: "falta.mp3",
     cover: "https://picsum.photos/seed/1/200/200"
   },
   {
     title: "Si Tú Me Quisieras",
     artist: "Mon Laferte",
-    src: "musica/tu.mp3",
+    src: "tu.mp3",
     cover: "https://picsum.photos/seed/1/200/200"
   },
   {
     title: "Viento",
     artist: "Caifanes",
-    src: "musica/viento.mp3",
+    src: "viento.mp3",
     cover: "https://picsum.photos/seed/1/200/200"
   },
   {
     title: "Afuera",
     artist: "Caifanes",
-    src: "musica/afuera.mp3",
+    src: "afuera.mp3",
     cover: "https://picsum.photos/seed/1/200/200"
   },
   {
     title: "La Célula Que Explota",
     artist: "Caifanes",
-    src: "musica/celula.mp3",
+    src: "celula.mp3",
     cover: "https://picsum.photos/seed/1/200/200"
   },
   {
     title: "Los Dioses Ocultos",
     artist: "Caifanes",
-    src: "musica/dioses.mp3",
+    src: "dioses.mp3",
     cover: "https://picsum.photos/seed/1/200/200"
   },
   {
     title: "No Dejes Que...",
     artist: "Caifanes",
-    src: "musica/dejes.mp3",
+    src: "dejes.mp3",
     cover: "https://picsum.photos/seed/1/200/200"
   },
   {
     title: "Tu Falta De Querer",
     artist: "Mon Laferte",
-    src: "musica/falta.mp3",
+    src: "falta.mp3",
     cover: "https://picsum.photos/seed/1/200/200"
   },{
     title: "Frances Limon",
     artist: "Enanitos Verdes",
-    src: "musica/frances.mp3",
+    src: "frances.mp3",
     cover: "https://picsum.photos/seed/1/200/200"
   },
   {
     title: "Amiga Mia",
     artist: "Michel Del Buenon",
-    src: "musica/amiga-mia.mp3",
+    src: "amiga-mia.mp3",
     cover: "https://picsum.photos/seed/5/200/200"
   },
 ];
