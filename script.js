@@ -248,7 +248,7 @@ const playlist = [
   {
     title: "Amiga Mia",
     artist: "Michel Del Buenon",
-    src: "amiga-mia.mp3",
+    src: "amiga.mp3",
     cover: "https://picsum.photos/seed/5/200/200"
   },
 ];
