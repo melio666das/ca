@@ -162,95 +162,95 @@ let isRepeat = false;
 let playlistOpen = false;
 
 const playlist = [
+        {
+        title: "musica 1",
+        artist: "no sirve",
+        src: "musica.mp3",
+        cover: "musica/cover1.jpg"
+    },
+        {
+        title: "coqueta",
+        artist: "Fuerza Regida y Grupo Frontera",
+        src: "coqueta.mp3",
+        cover: "musica/cover2.jpg"
+    },
     {
-    title: "musica 1",
-    artist: "no sirve",
-    src: "musica.mp3",
-    cover: "https://picsum.photos/seed/1/200/200"
-  },
+        title: "Chicago",
+        artist: "Michael",
+        src: "chicago.mp3",
+        cover: "musica/cover3.jpg"
+    },
     {
-    title: "coqueta",
-    artist: "Fuerza Regida y Grupo Frontera",
-    src: "coqueta.mp3",
-    cover: "https://picsum.photos/seed/1/200/200"
-  },
-  {
-    title: "Chicago",
-    artist: "Michael",
-    src: "chicago.mp3",
-    cover: "https://picsum.photos/seed/2/200/200"
-  },
-  {
-    title: "Morena",
-    artist: "Los Felinos",
-    src: "morena.mp3",
-    cover: "https://picsum.photos/seed/3/200/200"
-  },
-  {
-    title: "Happy",
-    artist: "Turles",
-    src: "happy.mp3",
-    cover: "https://picsum.photos/seed/4/200/200"
-  },
-  {
-    title: "Tu Falta De Querer",
-    artist: "Mon Laferte",
-    src: "falta.mp3",
-    cover: "https://picsum.photos/seed/1/200/200"
-  },
-  {
-    title: "Si Tú Me Quisieras",
-    artist: "Mon Laferte",
-    src: "tu.mp3",
-    cover: "https://picsum.photos/seed/1/200/200"
-  },
-  {
-    title: "Viento",
-    artist: "Caifanes",
-    src: "viento.mp3",
-    cover: "https://picsum.photos/seed/1/200/200"
-  },
-  {
-    title: "Afuera",
-    artist: "Caifanes",
-    src: "afuera.mp3",
-    cover: "https://picsum.photos/seed/1/200/200"
-  },
-  {
-    title: "La Célula Que Explota",
-    artist: "Caifanes",
-    src: "celula.mp3",
-    cover: "https://picsum.photos/seed/1/200/200"
-  },
-  {
-    title: "Los Dioses Ocultos",
-    artist: "Caifanes",
-    src: "dioses.mp3",
-    cover: "https://picsum.photos/seed/1/200/200"
-  },
-  {
-    title: "No Dejes Que...",
-    artist: "Caifanes",
-    src: "dejes.mp3",
-    cover: "https://picsum.photos/seed/1/200/200"
-  },
-  {
-    title: "Tu Falta De Querer",
-    artist: "Mon Laferte",
-    src: "falta.mp3",
-    cover: "https://picsum.photos/seed/1/200/200"
-  },{
-    title: "Frances Limon",
-    artist: "Enanitos Verdes",
-    src: "frances.mp3",
-    cover: "https://picsum.photos/seed/1/200/200"
-  },
-  {
-    title: "Amiga Mia",
-    artist: "Michel Del Buenon",
-    src: "amiga.mp3",
-    cover: "https://picsum.photos/seed/5/200/200"
-  },
+        title: "Morena",
+        artist: "Los Felinos",
+        src: "morena.mp3",
+        cover: "musica/cover4.jpg"
+    },
+    {
+        title: "Happy",
+        artist: "Turles",
+        src: "happy.mp3",
+        cover: "musica/cover5.jpg"
+    },
+    {
+        title: "Tu Falta De Querer",
+        artist: "Mon Laferte",
+        src: "falta.mp3",
+        cover: "musica/cover6.jpg"
+    },
+    {
+        title: "Si Tú Me Quisieras",
+        artist: "Mon Laferte",
+        src: "tu.mp3",
+        cover: "musica/cover7.jpg"
+    },
+    {
+        title: "Viento",
+        artist: "Caifanes",
+        src: "viento.mp3",
+        cover: "musica/cover8.jpg"
+    },
+    {
+        title: "Afuera",
+        artist: "Caifanes",
+        src: "afuera.mp3",
+        cover: "musica/cover9.jpg"
+    },
+    {
+        title: "La Célula Que Explota",
+        artist: "Caifanes",
+        src: "celula.mp3",
+        cover: "musica/cover10.jpg"
+    },
+    {
+        title: "Los Dioses Ocultos",
+        artist: "Caifanes",
+        src: "dioses.mp3",
+        cover: "musica/cover11.jpg"
+    },
+    {
+        title: "No Dejes Que...",
+        artist: "Caifanes",
+        src: "dejes.mp3",
+        cover: "musica/cover12.jpg"
+    },
+    {
+        title: "Tu Falta De Querer",
+        artist: "Mon Laferte",
+        src: "falta.mp3",
+        cover: "musica/cover13.jpg"
+    },{
+        title: "Frances Limon",
+        artist: "Enanitos Verdes",
+        src: "frances.mp3",
+        cover: "musica/cover14.jpg"
+    },
+    {
+        title: "Amiga Mia",
+        artist: "Michel Del Buenon",
+        src: "amiga.mp3",
+        cover: "musica/cover15.jpg"
+    },
 ];
 
 /* =========================
@@ -265,7 +265,28 @@ function loadTrack(){
     document.getElementById("title").textContent = t.title;
     document.getElementById("artist").textContent = t.artist;
 
-    document.getElementById("cover").style.backgroundImage = `url(${t.cover})`;
+    const coverEl = document.getElementById("cover");
+    // reset
+    coverEl.style.backgroundImage = '';
+    coverEl.textContent = '🎵';
+
+    // Preload cover image and set only on successful load; fallback to emoji on error
+    if (t.cover) {
+        const img = new Image();
+        img.onload = () => {
+            coverEl.style.backgroundImage = `url(${t.cover})`;
+            coverEl.textContent = '';
+        };
+        img.onerror = () => {
+            console.warn('Cover failed to load:', t.cover);
+            coverEl.style.backgroundImage = '';
+            coverEl.textContent = '🎵';
+        };
+        img.src = t.cover;
+    } else {
+        coverEl.style.backgroundImage = '';
+        coverEl.textContent = '🎵';
+    }
 
     playMusic();
 }
@@ -425,6 +446,33 @@ if (!document.querySelector('.seccion.activa')) {
 }
 
 /* =========================
+   IMAGEN ROTATIVA EN INICIO
+   ========================= */
+const inicioImg = document.getElementById('inicioImg');
+const inicioImages = [
+    'https://picsum.photos/seed/paisaje1/800/400',
+    'https://picsum.photos/seed/paisaje2/800/400',
+    'https://picsum.photos/seed/paisaje3/800/400',
+    'https://picsum.photos/seed/paisaje4/800/400'
+];
+let inicioIndex = 0;
+
+function changeInicioImage(){
+    if(!inicioImg) return;
+    // fade out
+    inicioImg.style.opacity = 0;
+    setTimeout(()=>{
+        inicioIndex = (inicioIndex + 1) % inicioImages.length;
+        inicioImg.src = inicioImages[inicioIndex];
+        // fade in
+        inicioImg.style.opacity = 1;
+    }, 600);
+}
+
+// Cambia cada 5 segundos
+setInterval(changeInicioImage, 5000);
+
+/* =========================
    SECCIONES
 ========================= */
 function mostrarSeccion(seccion){
@@ -435,4 +483,36 @@ function mostrarSeccion(seccion){
     if (target) {
         target.classList.add("activa");
     }
+    const sectionMenu = document.getElementById('sectionMenu');
+    if (sectionMenu && sectionMenu.classList.contains('open')) {
+        toggleMenu(false);
+    }
+}
+
+function abrirSeccion(seccion){
+    mostrarSeccion(seccion);
+    toggleMenu(false);
+}
+
+function toggleMenu(forceOpen){
+    const sectionMenu = document.getElementById('sectionMenu');
+    const isOpen = sectionMenu.classList.contains('open');
+
+    if (forceOpen === false || isOpen) {
+        sectionMenu.classList.remove('open');
+        return;
+    }
+
+    sectionMenu.classList.add('open');
+}
+
+const menuToggle = document.getElementById('menuToggle');
+const closeMenu = document.getElementById('closeMenu');
+
+if (menuToggle) {
+    menuToggle.addEventListener('click', () => toggleMenu(true));
+}
+
+if (closeMenu) {
+    closeMenu.addEventListener('click', () => toggleMenu(false));
 }
